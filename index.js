@@ -69,7 +69,7 @@ const burger = {
     if(string === 'teacher' || string === 'student'){
       const twentyFive =  this.price - (this.price * 0.25);
       return twentyFive;
-    } else  {
+    } else {
       const ten = this.price - (this.price * 0.10);
       return ten;
     }
@@ -100,6 +100,7 @@ Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
+console.log('Task 3:', reviews[5].feedback);
 
 
 
@@ -109,7 +110,8 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-
+reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays'
+console.log('Task 4:', reviews);
 
 
 
@@ -122,9 +124,20 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+//4 parameters - array \ name \ rating \ review
+//
+function addReview(array, name, rating, feedback){
+  const newReview = {
+    name,
+    rating,
+    feedback,
+  }
+  array.push(newReview);
+  return array;
 }
+
+console.log('Task 5:', addReview(reviews, 'Joey', 5, 'Amazing!'));
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -136,10 +149,13 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
+//2 params - array / number(index)
+//return string
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
+console.log('Task 6:', getReviewByIndex(reviews, 4))
 
 
   
