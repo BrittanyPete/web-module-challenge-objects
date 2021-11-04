@@ -3,8 +3,12 @@
 /*When doing these tasks, we recommend using console.log to test the output of your code to make sure it works correctly.*/
 
 ///////////////Menu Items (MVP)///////////////////
-const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
+const latte = { name: "Cafe Latte", price: 4, category: "Drinks" };
+const breakfastBurrito = {
+  name: "Breakfast Burrito",
+  price: 16,
+  category: "Breakfast",
+};
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
@@ -15,18 +19,18 @@ The function should:
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
 //three parameters - name, price, category
-//return a new menu item 
+//return a new menu item
 
-function createMenuItem(name, price, category){
+function createMenuItem(name, price, category) {
   const menuItem = {
     name,
     price,
-    category
-  } 
+    category,
+  };
   return menuItem;
 }
 
-console.log('Task 1a:', createMenuItem('Cheeseburger', 3, 'dinner'));
+console.log("Task 1a:", createMenuItem("Cheeseburger", 3, "dinner"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -37,10 +41,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-console.log('Task 1b:', createMenuItem('Fries', 2, 'appetizer'));
-console.log('Task 1b:', createMenuItem('Pancakes', 6, 'breakfast'));
-console.log('Task 1b:', createMenuItem('Hot Chocolate', 1.5, 'drink'));
-
+console.log("Task 1b:", createMenuItem("Fries", 2, "appetizer"));
+console.log("Task 1b:", createMenuItem("Pancakes", 6, "breakfast"));
+console.log("Task 1b:", createMenuItem("Hot Chocolate", 1.5, "drink"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -55,54 +58,75 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-// method .(method goes here?) 
+// method .(method goes here?)
 // one parameter - string
 //if else if statements returning the correct discount
 
-
 const burger = {
-  name: "Burger", 
-  price: 18, 
+  name: "Burger",
+  price: 18,
   category: "Lunch",
 
   discount: function (string) {
-    if(string === 'teacher' || string === 'student'){
-      const twentyFive =  this.price - (this.price * 0.25);
+    if (string === "teacher" || string === "student") {
+      const twentyFive = this.price - this.price * 0.25;
       return twentyFive;
     } else {
-      const ten = this.price - (this.price * 0.10);
+      const ten = this.price - this.price * 0.1;
       return ten;
     }
-  }
-}
+  },
+};
 
-console.log('Task 2:', 'Your total is ', burger.discount('public'));
-
-
-
-
-
+console.log("Task 2:", "Your total is ", burger.discount("public"));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
-    {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
-    {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
-    {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
-    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
-    {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
-    {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
-    {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
-    {name: "Reyna", rating: 3.5, feedback: ""},
-]
+  {
+    name: "Daniela",
+    rating: 5,
+    feedback: "Beautiful atmosphere and wonderful vegan options!",
+  },
+  {
+    name: "Jack",
+    rating: 3,
+    feedback:
+      "A little too hipster for my taste, but the burger was decent, if overpriced",
+  },
+  { name: "Miranda", rating: 4, feedback: "fun trivia and cool vibes" },
+  {
+    name: "Wen",
+    rating: 4.5,
+    feedback:
+      "I don't leave my house often, but when I do, it's for this place. Highly reccomend.",
+  },
+  {
+    name: "Brett",
+    rating: 3,
+    feedback:
+      "great selection of snacks and a nice cafe area to get work done during the day.",
+  },
+  {
+    name: "Julius",
+    rating: 2,
+    feedback:
+      "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it.",
+  },
+  {
+    name: "Lauren",
+    rating: 4,
+    feedback:
+      "Absolutely love that they have karaoke Fridays! Food and drink selection is okay.",
+  },
+  { name: "Reyna", rating: 3.5, feedback: "" },
+];
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
 
-console.log('Task 3:', reviews[5].feedback);
-
-
+console.log("Task 3:", reviews[5].feedback);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 
@@ -110,10 +134,9 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   2. log the reviews array to the console to check your work
 */
 
-reviews[7].feedback = 'this place is chill with really cool people, great for getting work done on weekdays'
-console.log('Task 4:', reviews);
-
-
+reviews[7].feedback =
+  "this place is chill with really cool people, great for getting work done on weekdays";
+console.log("Task 4:", reviews);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that creates an object with name, rating, feedback, add the new review to the end of an array and returns the resulting array
@@ -126,18 +149,17 @@ Write a function that creates an object with name, rating, feedback, add the new
 
 //4 parameters - array \ name \ rating \ review
 //
-function addReview(array, name, rating, feedback){
+function addReview(array, name, rating, feedback) {
   const newReview = {
     name,
     rating,
     feedback,
-  }
+  };
   array.push(newReview);
   return array;
 }
 
-console.log('Task 5:', addReview(reviews, 'Joey', 5, 'Amazing!'));
-
+console.log("Task 5:", addReview(reviews, "Joey", 5, "Amazing!"));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -155,10 +177,7 @@ Use the getReviewByIndex function below to do the following:
 function getReviewByIndex(array, number) {
   return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
-console.log('Task 6:', getReviewByIndex(reviews, 4))
-
-
-  
+console.log("Task 6:", getReviewByIndex(reviews, 4));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -174,11 +193,12 @@ Use the getLastReview function below to do the following:
 //param array
 
 function getLastReview(array) {
-  return `${array[array.length-1].name} gave the restaurant a ${array[array.length-1].rating} star review, and their feedback was: ${array[array.length-1].feedback}`;
-} 
+  return `${array[array.length - 1].name} gave the restaurant a ${
+    array[array.length - 1].rating
+  } star review, and their feedback was: ${array[array.length - 1].feedback}`;
+}
 
-console.log('Task 7:', getLastReview(reviews));
-
+console.log("Task 7:", getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
@@ -191,16 +211,26 @@ Use the getReviewsByRating function below to do the following:
   For example: getReviewByRating(reviews, 4) would return these reviews in the 4 range (4-4.9):
   [
     {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
-    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
+    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly recommend."},
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
-  }
+//2 params - array, rating
+//for loop to go through the array
 
-  
+function getReviewByRating(array, rating) {
+  const rev = [];
+  for (let i = 0; i < array.length; i++) {
+    if (Math.floor(array[i].rating) === rating) {
+      rev.push(array[i]);
+    }
+  }
+  return rev;
+}
+console.log("Stretch 1:", getReviewByRating(reviews, 3));
+
+
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
   1. Receive the array that holds all the reviews
@@ -215,9 +245,8 @@ Use the getLongReviews function below to do the following:
 */
 
 function getLongReviews(/* code here */) {
-    /* code here */
-  }
-  
+  /* code here */
+}
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
@@ -236,17 +265,14 @@ Use the carMaker function below to do the following:
   It would return 110 because it was created with 10 as the odometer and we added 100 to it with the drive method 
 */
 
-
 function carMaker(/* code here */) {
-    /* code here */
-    
+  /* code here */
 }
 
-
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-function foo(){
-  console.log('its working');
-  return 'bar';
+function foo() {
+  console.log("its working");
+  return "bar";
 }
 module.exports = {
   foo,
@@ -255,4 +281,4 @@ module.exports = {
   addReview,
   getReviewByIndex,
   getLastReview,
-}
+};
