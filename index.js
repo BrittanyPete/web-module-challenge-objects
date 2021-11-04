@@ -54,12 +54,32 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
+
+// method .(method goes here?) 
+// one parameter - string
+//if else if statements returning the correct discount
+
+
 const burger = {
   name: "Burger", 
   price: 18, 
-  category: "Lunch", 
-  
+  category: "Lunch",
+
+  discount: function (string) {
+    if(string === 'teacher' || string === 'student'){
+      const twentyFive =  this.price - (this.price * 0.25);
+      return twentyFive;
+    } else  {
+      const ten = this.price - (this.price * 0.10);
+      return ten;
+    }
+  }
 }
+
+console.log('Task 2:', 'Your total is ', burger.discount('public'));
+
+
+
 
 
 
