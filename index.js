@@ -14,10 +14,19 @@ The function should:
   
   Example createMenuItem('tacos', 8, 'Lunch') should return {name: 'tacos', price: 8, category: 'Lunch'}
 */
+//three parameters - name, price, category
+//return a new menu item 
 
-function createMenuItem(/*Your code here*/){
-    /*Your code here*/
+function createMenuItem(name, price, category){
+  const menuItem = {
+    name,
+    price,
+    category
+  } 
+  return menuItem;
 }
+
+console.log('Task 1a:', createMenuItem('Cheeseburger', 3, 'dinner'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -28,7 +37,9 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
+console.log('Task 1b:', createMenuItem('Fries', 2, 'appetizer'));
+console.log('Task 1b:', createMenuItem('Pancakes', 6, 'breakfast'));
+console.log('Task 1b:', createMenuItem('Hot Chocolate', 1.5, 'drink'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
