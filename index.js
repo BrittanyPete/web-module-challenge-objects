@@ -218,6 +218,7 @@ Use the getReviewsByRating function below to do the following:
 
 //2 params - array, rating
 //for loop to go through the array
+//return an array = a new array, so create a new array, and return it in the function.
 
 function getReviewByRating(array, rating) {
   const rev = [];
@@ -244,9 +245,22 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-  /* code here */
+//one param - array
+//create a new array - 
+//for loop through orig array
+//use string. or .length to calculate total words in feedback and show any that are more than 15 words
+//return the new array
+
+function getLongReviews(array) {
+  const longReview = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].feedback.split(' ').length > 15) {
+      longReview.push(array[i]);
+    }
+  }
+  return longReview;
 }
+console.log('stretch 2:', getLongReviews(reviews));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
